@@ -66,6 +66,7 @@ def extract_and_fill_chinese_words(file_path):
     if all(df[df.columns[6]] == ''):
         # 如果G列全部由空字符串组成，则G列全部填写“全部一致”
         df[df.columns[6]] = '全部一致'
+        print('序号全部一致')
 
     # 该函数检查被除数是否有大于0的检查
     def check_conditions(text):
@@ -88,6 +89,7 @@ def extract_and_fill_chinese_words(file_path):
     if all(df[df.columns[7]] == ''):
         # 如果H列全部由空字符串组成，则G列全部填写“全部通过”
         df[df.columns[7]] = '全部通过'
+        print('被除数检查全部通过')
 
     # 保存修改后的内容
     df.to_excel(file_path, index=False)
@@ -104,7 +106,12 @@ def choose_file():
 
     if file_path:  # 如果用户选定了一个文件
         # 读取csv文件
-        df = pd.read_csv(file_path)
+        try:
+            df = pd.read_csv(file_path)
+        except UnicodeDecodeError:
+            print(f'无法用utf-8编码读取文件 {file_path}。请不要手动修改csv文件')
+        except Exception as e:
+            print(f'读取文件 {file_path} 时发生错误：', e)
 
         # 选择需要的列
         df = df[['Name', 'DisplayCondition', 'code']]
@@ -114,7 +121,6 @@ def choose_file():
         
         # 将数据写入xlsx文件
         try:
-            # 将数据写入xlsx文件
             df.to_excel(xlsx_file_path, index=False)
             print(f'已生成xlsx文件')
         except PermissionError:
@@ -122,17 +128,14 @@ def choose_file():
         except Exception as e:
             print(f'在尝试写入文件 {xlsx_file_path} 时发生未知错误: ', e)
 
-            print(f'已生成xlsx文件')
-
         # 新增代码 - 在这里添加对新生成xlsx文件的操作
         df_xlsx = pd.read_excel(xlsx_file_path)
 
     # 对df_xlsx进行操作
     try:
-        # 对df_xlsx进行操作
         if file_path:
             extract_and_fill_chinese_words(xlsx_file_path)
-            print("已完成处理。")
+            print("已完成处理")
     except Exception as e:
         print("出现错误：", e)
 
