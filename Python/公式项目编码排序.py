@@ -94,42 +94,66 @@ def extract_and_fill_chinese_words(file_path):
     # 保存修改后的内容
     df.to_excel(file_path, index=False)
 
-# 选择文件并处理
 def choose_file():
     # 创建一个Tkinter的窗口对象
     root = Tk()
     # 隐藏这个窗口
     root.withdraw()
 
-    # 打开一个文件选择对话框，让用户选定一个csv文件
-    file_path = filedialog.askopenfilename(filetypes=[('CSV Files', '*.csv')])
+    # 打开一个文件选择对话框，让用户选择csv文件或xlsx文件
+    file_path = filedialog.askopenfilename(filetypes=[
+        ('CSV & Excel Files', '*.csv; *.xlsx'),
+        ('CSV Files', '*.csv'),
+        ('XLSX Files', '*.xlsx')
+    ])
 
     if file_path:  # 如果用户选定了一个文件
-        # 读取csv文件
-        try:
-            df = pd.read_csv(file_path)
-        except UnicodeDecodeError:
-            print(f'无法用utf-8编码读取文件 {file_path}。请不要手动修改csv文件')
-        except Exception as e:
-            print(f'读取文件 {file_path} 时发生错误：', e)
+        # 根据文件后缀处理
+        extension = file_path.rsplit('.', 1)[1]
 
-        # 选择需要的列
-        df = df[['Name', 'DisplayCondition', 'code']]
+        # 如果选择csv文件
+        if extension == "csv":
+            print('已选择csv文件')
+            # 读取csv文件
+            try:
+                df = pd.read_csv(file_path)
+            except UnicodeDecodeError:
+                print(
+                    f'无法用utf-8编码读取文件 {file_path}。请不要手动修改csv文件')
+            except Exception as e:
+                print(f'读取文件 {file_path} 时发生错误：', e)
 
-        # 创建xlsx文件名（与csv文件同名，路径也相同）
-        xlsx_file_path = file_path.rsplit('.', 1)[0] + '.xlsx'
-        
-        # 将数据写入xlsx文件
-        try:
-            df.to_excel(xlsx_file_path, index=False)
-            print(f'已生成xlsx文件')
-        except PermissionError:
-            print(f'无法写入文件 {xlsx_file_path}。可能是由于文件正在被另一个程序使用，或者你没有写入该文件的权限。')
-        except Exception as e:
-            print(f'在尝试写入文件 {xlsx_file_path} 时发生未知错误: ', e)
+            # 选择需要的列
+            df = df[['Name', 'DisplayCondition', 'code']]
+
+            # 创建xlsx文件名（与csv文件同名，路径也相同）
+            xlsx_file_path = file_path.rsplit('.', 1)[0] + '.xlsx'
+
+            # 将数据写入xlsx文件
+            try:
+                df.to_excel(xlsx_file_path, index=False)
+                print(f'已生成xlsx文件')
+            except PermissionError:
+                print(
+                    f'无法写入文件 {xlsx_file_path}。可能是由于文件正在被另一个程序使用，或者你没有写入该文件的权限。')
+            except Exception as e:
+                print(f'在尝试写入文件 {xlsx_file_path} 时发生未知错误: ', e)
+
+        # 如果是xlsx文件
+        elif extension == "xlsx":
+            print('已选择xlsx文件')
+            # 直接使用xlsx文件路径
+            xlsx_file_path = file_path
 
         # 新增代码 - 在这里添加对新生成xlsx文件的操作
-        df_xlsx = pd.read_excel(xlsx_file_path)
+        try:
+            df_xlsx = pd.read_excel(xlsx_file_path)
+        except FileNotFoundError:
+            print(f'文件 {xlsx_file_path} 未找到。')
+        except PermissionError:
+            print(f'无法读取文件 {xlsx_file_path}。可能是由于文件正在被另一个程序使用，或者你没有打开该文件的权限。')
+        except Exception as e:
+            print(f'在尝试读取文件 {xlsx_file_path} 时发生错误：', e)
 
     # 对df_xlsx进行操作
     try:
