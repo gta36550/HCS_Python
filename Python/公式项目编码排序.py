@@ -31,17 +31,15 @@ def extract_and_fill_chinese_words(file_path):
         # 如果F列全部由空字符串组成，则将C列的数据复制到F列
         df[df.columns[5]] = df[df.columns[2]]
 
-    # 提取第B列中的中文词语，并填写到第C列，同时去重
-    df[df.columns[2]] = df[df.columns[1]].apply(lambda x: ' '.join(set(word for word in re.findall(r'[\u4e00-\u9fa5]+', str(x)) if not (re.search(fr"'{word}", str(x)) or re.search(fr"{word}'", str(x))))))
-
-    # 提取第B列中所有与单引号相邻的词
-    quoted_words = df[df.columns[1]].apply(lambda x: re.findall(r"'([\u4e00-\u9fa5]+)'", str(x)))
-
-    # 将得到的列表格式转换为set
-    quoted_words_set = set([word for sublist in quoted_words for word in sublist])
-
-    # 删除C列中在B列中与单引号相邻的词
-    df[df.columns[2]] = df[df.columns[2]].apply(lambda x: ' '.join([word for word in str(x).split() if word not in quoted_words_set]))
+    # 提取第B列中的中文词语（带数字的也算，会去掉纯数字和与单引号相邻的词），并填写到第C列，同时去重
+    pattern = r'\b[\u4e00-\u9fa5]*\d+[\u4e00-\u9fa5]*\b|[\u4e00-\u9fa5]+'
+    df[df.columns[2]] = df[df.columns[1]].apply(
+        lambda x: ' '.join(
+            set(word for word in re.findall(pattern, str(x)) 
+                if not (word.isdigit() or re.search(fr"'{word}", str(x)) or re.search(fr"{word}'", str(x)))
+            )
+        )
+    )
 
     # 去掉C列中与A列相同的字符串
     df[df.columns[2]] = df.apply(lambda row: ' '.join(set(row[df.columns[2]].split()) - set(row[df.columns[0]].split())), axis=1)
@@ -58,7 +56,11 @@ def extract_and_fill_chinese_words(file_path):
         df[df.columns[4]] = df.apply(lambda row: '是' if '是' in row[df.columns[3]].split(', ') else str(max([int(num) for num in re.findall(r'\b\d+\b', row[df.columns[3]])], default=0) + 1), axis=1)
 
         # 将其对应的A列那一行E列的数字填写到C列那一行的D列，并用逗号分隔。如果没有匹配到，就填写字符串“否”
-        df[df.columns[3]] = df.apply(lambda row: ', '.join([str(df.loc[df[df.columns[0]].str.contains(word), df.columns[4]].values[0]) if any(word in a_column for a_column in df[df.columns[0]].dropna()) else '否' for word in str(row[df.columns[2]]).split()]), axis=1)
+        df[df.columns[3]] = df.apply(lambda row: ', '.join(
+            [str(df.loc[df[df.columns[0]] == word, df.columns[4]].values[0])
+                if any(word == a_column for a_column in df[df.columns[0]].dropna()) else '否'
+                for word in str(row[df.columns[2]]).split()]), 
+            axis=1)
 
     # 对E列和F列进行检查，如果E列不等于F列，则G列填写不一致
     df[df.columns[6]] = df.apply(lambda row: '不一致' if int(row[df.columns[4]]) != int(row[df.columns[5]]) else '', axis=1)
