@@ -2,6 +2,7 @@
 import tkinter as tk
 import pandas as pd
 import re
+import chardet
 from tkinter import filedialog
 from tkinter import Tk
 
@@ -107,7 +108,8 @@ def choose_file():
         ('XLSX Files', '*.xlsx')
     ])
 
-    if file_path:  # 如果用户选定了一个文件
+    # 如果用户选定了一个文件
+    if file_path:  
         # 根据文件后缀处理
         extension = file_path.rsplit('.', 1)[1]
 
@@ -116,10 +118,12 @@ def choose_file():
             print('已选择csv文件')
             # 读取csv文件
             try:
-                df = pd.read_csv(file_path)
+                rawdata = open(file_path, 'rb').read()
+                result = chardet.detect(rawdata)
+                encoding = result['encoding']
+                df = pd.read_csv(file_path, encoding=encoding)
             except UnicodeDecodeError:
-                print(
-                    f'无法用utf-8编码读取文件 {file_path}。请不要手动修改csv文件')
+                print(f'无法用{encoding}编码读取文件 {file_path}，请尝试其他编码。')
             except Exception as e:
                 print(f'读取文件 {file_path} 时发生错误：', e)
 
