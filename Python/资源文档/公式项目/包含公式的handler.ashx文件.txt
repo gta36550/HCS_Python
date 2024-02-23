@@ -1,0 +1,1530 @@
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AD%A6%E5%8E%86%E8%A1%A5%E8%B4%B4%E6%A0%87%E5%87%86
+HTTP/1.1 200 OK
+Content-Length: 1571
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:03 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"学历补贴标准","Condition":"if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  like \u0027大专%\u0027     select 100  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027本科-非全日制\u0027     select 150  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027本科\u0027     select 300  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027本科-211\u0027 or isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027硕士-非全日制\u0027     select 500  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027硕士\u0027     select 800  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027硕士-211\u0027     select 1000  else if isnull(( select top 1 egrade from employee e where e.id=EMPID),0)  = \u0027博士\u0027     select 2000 ","DisplayCondition":"if 文化程度 like \u0027大专%\u0027 \n   学历补贴标准 = 100 \nelse\nif 文化程度 = \u0027本科-非全日制\u0027 \n   学历补贴标准 = 150 \nelse\nif 文化程度 = \u0027本科\u0027 \n   学历补贴标准 = 300 \nelse\nif 文化程度 = \u0027本科-211\u0027 or 文化程度 = \u0027硕士-非全日制\u0027 \n   学历补贴标准 = 500 \nelse\nif 文化程度 = \u0027硕士\u0027 \n   学历补贴标准 = 800 \nelse\nif 文化程度 = \u0027硕士-211\u0027 \n   学历补贴标准 = 1000 \nelse\nif 文化程度 = \u0027博士\u0027 \n   学历补贴标准 = 2000 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 70
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B9%B4%E8%AF%B7%E5%81%87%E6%9C%88%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 250
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:04 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"年请假月数","Condition":"select floor ( isnull(( select top 1 isnull(年请假总天数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  / 30 ) ","DisplayCondition":"年请假月数 = floor ( 年请假总天数 / 30 ) "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E7%BC%BA%E5%8B%A4%E5%A4%A9%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 427
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:05 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"缺勤天数","Condition":"if isnull(( select yinchuqin_day from SalarygongshiItem),0)  \u003e isnull(( select work_hours from SalarygongshiItem),0)  / 8     select isnull(( select yinchuqin_day from SalarygongshiItem),0)  - isnull(( select work_hours from SalarygongshiItem),0)  / 8","DisplayCondition":"if 应出勤天数 \u003e 实际出勤小时 / 8 \n   缺勤天数 = 应出勤天数 - 实际出勤小时 / 8"}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%81%8C%E7%A7%B0%E8%A1%A5%E8%B4%B4%E6%A0%87%E5%87%86
+HTTP/1.1 200 OK
+Content-Length: 872
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:06 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"职称补贴标准","Condition":"if isnull(( select top 1 jobplace from employee e where e.id=EMPID),0)  = \u0027初级职称\u0027     select 150  else if isnull(( select top 1 jobplace from employee e where e.id=EMPID),0)  = \u0027中级职称\u0027     select 300  else if isnull(( select top 1 jobplace from employee e where e.id=EMPID),0)  = \u0027副高级职称\u0027     select 500  else if isnull(( select top 1 jobplace from employee e where e.id=EMPID),0)  = \u0027正高级职称\u0027     select 1000 ","DisplayCondition":"if 工作职称 = \u0027初级职称\u0027 \n   职称补贴标准 = 150 \nelse\nif 工作职称 = \u0027中级职称\u0027 \n   职称补贴标准 = 300 \nelse\nif 工作职称 = \u0027副高级职称\u0027 \n   职称补贴标准 = 500 \nelse\nif 工作职称 = \u0027正高级职称\u0027 \n   职称补贴标准 = 1000 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 43
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E6%97%A5%E6%9C%9F
+HTTP/1.1 200 OK
+Content-Length: 546
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:06 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"日期","Condition":"select year ( dateadd ( year , 1 , isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  ) ) * 10000 + month ( dateadd ( year , 1 , isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  ) ) * 100 + day ( dateadd ( year , 1 , isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  ) ) ","DisplayCondition":"日期 = year ( dateadd ( year , 1 , 入职日期 ) ) * 10000 + month ( dateadd ( year , 1 , 入职日期 ) ) * 100 + day ( dateadd ( year , 1 , 入职日期 ) ) "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B8%A6%E8%96%AA%E5%B9%B4%E5%81%87%E5%A4%A9%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 1556
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:08 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"带薪年假天数","Condition":"if isnull(( select top 1 isnull(是否计算年假,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003c\u003e 1     select 0  else if dateadd ( year , -1 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -10 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 5  else if dateadd ( year , -10 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -20 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 10  else if dateadd ( year , -20 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 15 ","DisplayCondition":"if 是否计算年假 \u003c\u003e 1 \n   带薪年假天数 = 0 \nelse\nif dateadd ( year , -1 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -10 , 薪酬统计月份 ) \u003c 入职日期 \n   带薪年假天数 = 5 \nelse\nif dateadd ( year , -10 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -20 , 薪酬统计月份 ) \u003c 入职日期 \n   带薪年假天数 = 10 \nelse\nif dateadd ( year , -20 , 薪酬统计月份 ) \u003e= 入职日期 \n   带薪年假天数 = 15 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%A4%9C%E7%8F%AD%E8%A1%A5%E8%B4%B4
+HTTP/1.1 200 OK
+Content-Length: 493
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:08 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"夜班补贴","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(postname,\u0027\u0027) from HR_Post p join employee e on e.WorkPostId = p.id where e.id=EMPID),0)  = \u0027警卫\u0027     select isnull(( select nightdays from SalarygongshiItem),0)  * 20 ","DisplayCondition":"if 岗位人员 = 1 and 岗位名称 = \u0027警卫\u0027 \n   夜班补贴 = 夜班天数 * 20 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%8A%82%E5%81%87%E6%97%A5%E5%87%BA%E5%8B%A4%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 170
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:10 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"节假日出勤数","Condition":"select isnull(( select overtime_h from SalarygongshiItem),0)  ","DisplayCondition":"节假日出勤数 = 节日加班小时 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%8A%A0%E7%8F%AD%E5%A4%A9%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 166
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:10 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"加班天数","Condition":"select isnull(( select overtime_c from SalarygongshiItem),0)  / 8 ","DisplayCondition":"加班天数 = 平时加班小时 / 8 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 70
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B9%B3%E6%97%B6%E5%87%BA%E5%8B%A4%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 214
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:12 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"平时出勤数","Condition":"select isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ","DisplayCondition":"平时出勤数 = 法定满勤数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 43
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E6%9C%88%E8%96%AA
+HTTP/1.1 200 OK
+Content-Length: 1662
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:12 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"月薪","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(postname,\u0027\u0027) from HR_Post p join employee e on e.WorkPostId = p.id where e.id=EMPID),0)  = \u0027计划员\u0027     select isnull(( select basepay_jibie from SalarygongshiItem),0)  / 30 * 22  else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select basepay_jibie from SalarygongshiItem),0)  / 26 * 22  else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 2     select isnull(( select basepay_jibie from SalarygongshiItem),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 0     select isnull(( select basepay_jibie from SalarygongshiItem),0)  / 25 * 22 ","DisplayCondition":"if 岗位人员 = 1 and 岗位名称 = \u0027计划员\u0027 \n   月薪 = 工资级别 / 30 * 22 \nelse\nif 岗位人员 = 1 and 有无延时 = 1 \n   月薪 = 工资级别 / 26 * 22 \nelse\nif 岗位人员 = 1 and 有无延时 = 2 \n   月薪 = 工资级别 \nelse\nif 岗位人员 = 1 and 有无延时 = 0 \n   月薪 = 工资级别 / 25 * 22 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AE%9E%E9%99%85%E6%9C%88%E4%BB%BD
+HTTP/1.1 200 OK
+Content-Length: 155
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:14 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"实际月份","Condition":"select isnull(( select monthgongling from SalarygongshiItem),0)  ","DisplayCondition":"实际月份 = 工龄月龄 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%8A%A0%E7%8F%AD%E5%B7%A5%E8%B5%84%E8%AE%A1%E4%BB%B6
+HTTP/1.1 200 OK
+Content-Length: 238
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:14 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"加班工资计件","Condition":"select isnull(( select top 1 isnull(标准小时工资,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  * 0.5 ","DisplayCondition":"加班工资计件 = 标准小时工资 * 0.5 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%91%A8%E5%85%AD%E5%A4%A9%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 1120
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:16 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"周六天数","Condition":"if isnull(( select manpay_flag from SalarygongshiItem),0)  = 1 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003c 31 or isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003c 31     select isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else if isnull(( select manpay_flag from SalarygongshiItem),0)  = 3     select ( isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ) / 8 ","DisplayCondition":"if 工资类型 = 1 and 公司满勤数 \u003c 31 or 法定满勤数 \u003c 31 \n   周六天数 = 公司满勤数 - 法定满勤数 \nelse\nif 工资类型 = 3 \n   周六天数 = ( 公司满勤数 - 法定满勤数 ) / 8 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B0%8F%E6%97%B6%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 296
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:16 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"小时工资","Condition":"if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select isnull(( select basepay_jibie from SalarygongshiItem),0)  ","DisplayCondition":"if 计时人员 = 1 \n   小时工资 = 工资级别 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%87%BA%E5%8B%A4%E6%97%B6%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 158
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:18 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"出勤时数","Condition":"select isnull(( select work_hours from SalarygongshiItem),0)  ","DisplayCondition":"出勤时数 = 实际出勤小时 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 97
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E4%B8%AA%E7%A8%8E%E4%B8%93%E9%A1%B9%E6%8A%B5%E6%89%A3%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 956
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:18 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"个税专项抵扣合计","Condition":"select isnull(( select top 1 deduction from SalaryTax where dname=\u0027子女教育\u0027 and id=EMPID and Month=MYDATE ),0)  + isnull(( select top 1 deduction from SalaryTax where dname=\u0027继续教育\u0027 and id=EMPID and Month=MYDATE ),0)  + isnull(( select top 1 deduction from SalaryTax where dname=\u0027赡养老人\u0027 and id=EMPID and Month=MYDATE ),0)  + isnull(( select top 1 deduction from SalaryTax where dname=\u0027首房贷款\u0027 and id=EMPID and Month=MYDATE ),0)  + isnull(( select top 1 deduction from SalaryTax where dname=\u0027住房租金\u0027 and id=EMPID and Month=MYDATE ),0)  + isnull(( select top 1 deduction from SalaryTax where dname=\u0027三岁以下婴幼儿照护\u0027 and id=EMPID and Month=MYDATE ),0)  ","DisplayCondition":"个税专项抵扣合计 = 子女教育 + 继续教育 + 赡养老人 + 首房贷款 + 住房租金 + 三岁以下婴幼儿照护 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 106
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E4%B8%AA%E4%BA%BA%E7%A4%BE%E4%BF%9D%E5%85%AC%E7%A7%AF%E9%87%91%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 366
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:20 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"个人社保公积金合计","Condition":"select isnull(( select top 1 isnull(ysman,0) from RS_EmpSheBaopay_SE where id=EMPID and SMonth=MYDATE ),0)  + isnull(( select top 1 isnull(manp,0) from RS_EmpSheBaopay_SE where id=EMPID and SMonth=MYDATE ),0)  ","DisplayCondition":"个人社保公积金合计 = 应收金额个人合计 + 公积金个人缴存 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%BF%9F%E5%88%B0%E6%89%A3%E6%AC%BE
+HTTP/1.1 200 OK
+Content-Length: 276
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:20 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"迟到扣款","Condition":"select ( ( isnull(( select latercount from SalarygongshiItem),0)  * ( isnull(( select latercount from SalarygongshiItem),0)  + 1 ) ) / 2 )  * 15 ","DisplayCondition":"迟到扣款 = ( ( 迟到次数 * ( 迟到次数 + 1 ) ) / 2 )  * 15 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E6%89%A3%E6%AC%BE%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 88
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:22 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"扣款合计","Condition":"select 0 ","DisplayCondition":"扣款合计 = 0 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 88
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%A9%E5%85%AC%E7%A7%AF%E9%87%91
+HTTP/1.1 200 OK
+Content-Length: 458
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:22 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"社会保险公积金","Condition":"select isnull(( select top 1 isnull(保险金扣款,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(医疗保险,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(失业保险,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(住房公积金,0) from gongshiresult ),0)  ","DisplayCondition":"社会保险公积金 = 保险金扣款 + 医疗保险 + 失业保险 + 住房公积金 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%8A%A0%E7%8F%AD%E6%97%B6%E6%95%B0
+HTTP/1.1 200 OK
+Content-Length: 662
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:24 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"加班时数","Condition":"if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)      select isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 计时人员 = 1 and 出勤时数 \u003e 法定满勤数 \n   加班时数 = 出勤时数 - 法定满勤数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 52
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B7%A5%E9%BE%84%E5%A5%96
+HTTP/1.1 200 OK
+Content-Length: 3074
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:24 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"工龄奖","Condition":"if month ( isnull(( select Month from SalarygongshiItem),0)  ) \u003c\u003e 5     select 0  else if dateadd ( year , -1 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -2 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 1000 * ( 12 - isnull(( select top 1 isnull(年请假月数,0) from gongshiresult ),0)  ) / 12  else if dateadd ( year , -2 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -3 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 1500 * ( 12 - isnull(( select top 1 isnull(年请假月数,0) from gongshiresult ),0)  ) / 12  else if dateadd ( year , -3 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -5 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 2000 * ( 12 - isnull(( select top 1 isnull(年请假月数,0) from gongshiresult ),0)  ) / 12  else if dateadd ( year , -5 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  and dateadd ( year , -10 , isnull(( select Month from SalarygongshiItem),0)  ) \u003c isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 2500 * ( 12 - isnull(( select top 1 isnull(年请假月数,0) from gongshiresult ),0)  ) / 12  else if dateadd ( year , -10 , isnull(( select Month from SalarygongshiItem),0)  ) \u003e= isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)      select 3000 * ( 12 - isnull(( select top 1 isnull(年请假月数,0) from gongshiresult ),0)  ) / 12 ","DisplayCondition":"if month ( 薪酬统计月份 ) \u003c\u003e 5 \n   工龄奖 = 0 \nelse\nif dateadd ( year , -1 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -2 , 薪酬统计月份 ) \u003c 入职日期 \n   工龄奖 = 1000 * ( 12 - 年请假月数 ) / 12 \nelse\nif dateadd ( year , -2 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -3 , 薪酬统计月份 ) \u003c 入职日期 \n   工龄奖 = 1500 * ( 12 - 年请假月数 ) / 12 \nelse\nif dateadd ( year , -3 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -5 , 薪酬统计月份 ) \u003c 入职日期 \n   工龄奖 = 2000 * ( 12 - 年请假月数 ) / 12 \nelse\nif dateadd ( year , -5 , 薪酬统计月份 ) \u003e= 入职日期 and dateadd ( year , -10 , 薪酬统计月份 ) \u003c 入职日期 \n   工龄奖 = 2500 * ( 12 - 年请假月数 ) / 12 \nelse\nif dateadd ( year , -10 , 薪酬统计月份 ) \u003e= 入职日期 \n   工龄奖 = 3000 * ( 12 - 年请假月数 ) / 12 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E9%AB%98%E6%B8%A9%E8%A1%A5%E8%B4%B4
+HTTP/1.1 200 OK
+Content-Length: 4714
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:27 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"高温补贴","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 and isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  \u003e \u00270\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(高温补贴标准,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and ( isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 or ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  )     select isnull(( select top 1 isnull(高温补贴标准,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(高温补贴标准,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)      select isnull(( select top 1 isnull(高温补贴标准,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(高温补贴标准,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = \u00271\u0027 and 有无延时 = \u00272\u0027 and 缺勤天数 \u003e \u00270\u0027 and 公司满勤数 \u003e 0 \n   高温补贴 = ( 公司满勤数 - 缺勤天数 ) / 公司满勤数 * 高温补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and ( 有无延时 = \u00272\u0027 or ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) \u003e= 公司满勤数 ) \n   高温补贴 = 高温补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   高温补贴 = ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) / 公司满勤数 * 高温补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 出勤时数 \u003e= 公司满勤数 \n   高温补贴 = 高温补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   高温补贴 = 出勤时数 / 公司满勤数 * 高温补贴标准 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%81%8C%E7%A7%B0%E8%A1%A5%E8%B4%B4
+HTTP/1.1 200 OK
+Content-Length: 4942
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:27 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"职称补贴","Condition":"if datediff ( day , isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  , isnull(( select Month from SalarygongshiItem),0)  ) \u003c= 16 and day ( isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  ) \u003e= 16     select 0  else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 and isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  \u003e \u00270\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(职称补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and ( isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 or ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  )     select isnull(( select top 1 isnull(职称补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(职称补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)      select isnull(( select top 1 isnull(职称补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(职称补贴标准,0) from gongshiresult ),0)  ","DisplayCondition":"if datediff ( day , 入职日期 , 薪酬统计月份 ) \u003c= 16 and day ( 入职日期 ) \u003e= 16 \n   职称补贴 = 0 \nelse\nif 岗位人员 = \u00271\u0027 and 有无延时 = \u00272\u0027 and 缺勤天数 \u003e \u00270\u0027 and 公司满勤数 \u003e 0 \n   职称补贴 = ( 公司满勤数 - 缺勤天数 ) / 公司满勤数 * 职称补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and ( 有无延时 = \u00272\u0027 or ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) \u003e= 公司满勤数 ) \n   职称补贴 = 职称补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   职称补贴 = ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) / 公司满勤数 * 职称补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 出勤时数 \u003e= 公司满勤数 \n   职称补贴 = 职称补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   职称补贴 = 出勤时数 / 公司满勤数 * 职称补贴标准 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AD%A6%E5%8E%86%E8%A1%A5%E8%B4%B4
+HTTP/1.1 200 OK
+Content-Length: 4942
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:28 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"学历补贴","Condition":"if datediff ( day , isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  , isnull(( select Month from SalarygongshiItem),0)  ) \u003c= 16 and day ( isnull(( select top 1 HIREDATE from employee e where e.id=EMPID),0)  ) \u003e= 16     select 0  else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 and isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  \u003e \u00270\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(学历补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and ( isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00272\u0027 or ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  )     select isnull(( select top 1 isnull(学历补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(平时出勤数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(学历补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)      select isnull(( select top 1 isnull(学历补贴标准,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = \u00271\u0027 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0     select isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(学历补贴标准,0) from gongshiresult ),0)  ","DisplayCondition":"if datediff ( day , 入职日期 , 薪酬统计月份 ) \u003c= 16 and day ( 入职日期 ) \u003e= 16 \n   学历补贴 = 0 \nelse\nif 岗位人员 = \u00271\u0027 and 有无延时 = \u00272\u0027 and 缺勤天数 \u003e \u00270\u0027 and 公司满勤数 \u003e 0 \n   学历补贴 = ( 公司满勤数 - 缺勤天数 ) / 公司满勤数 * 学历补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and ( 有无延时 = \u00272\u0027 or ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) \u003e= 公司满勤数 ) \n   学历补贴 = 学历补贴标准 \nelse\nif 岗位人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   学历补贴 = ( 平时出勤数 + 加班天数 + 节假日出勤数 - 缺勤天数 ) / 公司满勤数 * 学历补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 出勤时数 \u003e= 公司满勤数 \n   学历补贴 = 学历补贴标准 \nelse\nif 计时人员 = \u00271\u0027 or 计件人员 = \u00271\u0027 and 公司满勤数 \u003e 0 \n   学历补贴 = 出勤时数 / 公司满勤数 * 学历补贴标准 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 70
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%8A%82%E5%81%87%E6%97%A5%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 1065
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:28 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"节假日工资","Condition":"if isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  \u003e 0 and isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select ( isnull(( select top 1 isnull(月薪,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(法定满勤数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ) * isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  * 3 else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(小时工资,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(节假日出勤数,0) from gongshiresult ),0)  * 3 ","DisplayCondition":"if 法定满勤数 \u003e 0 and 岗位人员 = 1 \n   节假日工资 = ( 月薪 / 法定满勤数 ) * 节假日出勤数 * 3\nelse \nif 计时人员 = 1 \n   节假日工资 = 小时工资 * 节假日出勤数 * 3 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B9%B3%E6%97%B6%E5%87%BA%E5%8B%A4%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 167
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:30 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"平时出勤工资","Condition":"select isnull(( select top 1 isnull(月薪,0) from gongshiresult ),0)  ","DisplayCondition":"平时出勤工资 = 月薪 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E4%B8%93%E9%A1%B9%E6%89%A3%E9%99%A4
+HTTP/1.1 200 OK
+Content-Length: 191
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:30 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"专项扣除","Condition":"select isnull(( select top 1 isnull(个税专项抵扣合计,0) from gongshiresult ),0)  ","DisplayCondition":"专项扣除 = 个税专项抵扣合计 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%87%BA%E5%8B%A4%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 254
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:32 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"出勤工资","Condition":"select isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(小时工资,0) from gongshiresult ),0)  ","DisplayCondition":"出勤工资 = 出勤时数 * 小时工资 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 70
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E4%B8%8D%E8%AE%A1%E7%A8%8E%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 2897
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:32 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"不计税合计","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(一次性补偿金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(社会保险公积金,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(停发工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(已领当月工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(服装扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣水电费,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣饭卡充值,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(扣个人借款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(股权激励个税扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(一次性补偿金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(社会保险公积金,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(停发工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(已领当月工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(服装扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣水电费,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣饭卡充值,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(扣个人借款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = 1 \n不计税合计 = 一次性补偿金 - 社会保险公积金 - 停发工资 - 已领当月工资 - 服装扣款 - 代扣水电费 - 代扣饭卡充值 - 扣个人借款 - 代扣税 - 股权激励个税扣款 \nelse \nif 计时人员 = 1 or 计件人员 = 1 \n不计税合计 = 一次性补偿金 - 社会保险公积金 - 停发工资 - 已领当月工资 - 服装扣款 - 代扣水电费 - 代扣饭卡充值 - 扣个人借款 - 代扣税 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%8A%A0%E7%8F%AD%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 1402
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:34 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"加班工资","Condition":"if isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 0 and isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1      select ( isnull(( select top 1 isnull(月薪,0) from gongshiresult ),0)  / 22 ) * isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  * 1.5  else  if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(有无延时,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1      select ( isnull(( select top 1 isnull(月薪,0) from gongshiresult ),0)  / 22 ) * isnull(( select top 1 isnull(加班天数,0) from gongshiresult ),0)  * 2  else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(加班时数,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(小时工资,0) from gongshiresult ),0)  * 0.5 ","DisplayCondition":"if 有无延时 = 0 and 岗位人员 = 1 \n    加班工资 = ( 月薪 / 22 ) * 加班天数 * 1.5 \nelse \nif 岗位人员 = 1 and 有无延时 = 1 \n    加班工资 = ( 月薪 / 22 ) * 加班天数 * 2 \nelse\nif 计时人员 = 1 \n   加班工资 = 加班时数 * 小时工资 * 0.5 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%B8%A6%E8%96%AA%E5%B9%B4%E5%81%87%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 1676
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:36 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"带薪年假工资","Condition":"if isnull(( select top 1 isnull(是否计算年假,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003c\u003e 1     select 0  else if isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0 and isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select ( isnull(( select top 1 isnull(平时出勤工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班工资,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(带薪年假天数,0) from gongshiresult ),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select ( isnull(( select top 1 isnull(带薪年假天数,0) from gongshiresult ),0)  * 8 ) * isnull(( select top 1 isnull(小时工资,0) from gongshiresult ),0)   else  if isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(带薪年假天数,0) from gongshiresult ),0)  * 120 ","DisplayCondition":"if 是否计算年假 \u003c\u003e 1 \n   带薪年假工资 = 0 \nelse\nif 公司满勤数 \u003e 0 and 岗位人员 = 1 \n带薪年假工资 = ( 平时出勤工资 + 加班工资 ) / 公司满勤数 * 带薪年假天数 \nelse \nif 计时人员 = 1 \n带薪年假工资 = ( 带薪年假天数 * 8 ) * 小时工资 \nelse \nif 计件人员 = 1 \n带薪年假工资 = 带薪年假天数 * 120 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E7%BC%BA%E5%8B%A4%E6%89%A3%E6%AC%BE
+HTTP/1.1 200 OK
+Content-Length: 646
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:36 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"缺勤扣款","Condition":"if isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  \u003e 0     select ( isnull(( select top 1 isnull(加班工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(平时出勤工资,0) from gongshiresult ),0)  ) / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(缺勤天数,0) from gongshiresult ),0)  ","DisplayCondition":"if 公司满勤数 \u003e 0 \n   缺勤扣款 = ( 加班工资 + 平时出勤工资 ) / 公司满勤数 * 缺勤天数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 70
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%AE%A1%E7%AE%97%E6%9C%88%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 1336
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:38 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"计算月工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(平时出勤工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日工资,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(缺勤扣款,0) from gongshiresult ),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(出勤工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(加班工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(节假日工资,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资计件,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = 1 \n计算月工资 = 平时出勤工资 + 加班工资 + 节假日工资 - 缺勤扣款 \nelse \nif 计时人员 = 1 \n计算月工资 = 出勤工资 + 加班工资 + 节假日工资 \nelse\nif 计件人员 = 1 \n计算月工资 = 计算月工资计件 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%80%83%E6%A0%B8%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 444
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:38 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"考核工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * ( isnull(( select top 1 isnull(考核系数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - 1 ) ","DisplayCondition":"if 岗位人员 = 1 \n考核工资 = 计算月工资 * ( 考核系数 - 1 ) "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%80%83%E8%AF%95%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 4428
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:40 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"考试工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select ( isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ) / 100  else  if isnull(( select top 1 isnull(DepartmentCode3,0) from employee e where e.id=EMPID),0)  = \u0027动力装备部\u0027 or isnull(( select top 1 isnull(DepartmentCode4,0) from employee e where e.id=EMPID),0)  like \u0027品质%\u0027 and isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  / 100  else  if isnull(( select top 1 isnull(DepartmentCode3,0) from employee e where e.id=EMPID),0)  = \u0027销售中心\u0027 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e= isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  and isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select 4000 * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  / 100  else  if isnull(( select top 1 isnull(DepartmentCode3,0) from employee e where e.id=EMPID),0)  = \u0027销售中心\u0027 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003c isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  and isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0  select 4000 * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  / 100 * isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  and ( isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 )  select 8000 * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  / 100  else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0  select 8000 * isnull(( select top 1 isnull(考试得分,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  / 100 * isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = 1 \n考试工资 = ( 计算月工资 * 考试得分 ) / 100 \nelse \nif 三级部门 = \u0027动力装备部\u0027 or 四级部门 like \u0027品质%\u0027 and 计时人员 = 1 \n考试工资 = 计算月工资 * 考试得分 / 100 \nelse \nif 三级部门 = \u0027销售中心\u0027 and 出勤时数 \u003e= 公司满勤数 and 计件人员 = 1 \n考试工资 = 4000 * 考试得分 / 100 \nelse \nif 三级部门 = \u0027销售中心\u0027 and 出勤时数 \u003c 公司满勤数 and 计件人员 = 1 and 公司满勤数 \u003e 0 \n考试工资 = 4000 * 考试得分 / 100 * 出勤时数 / 公司满勤数 \nelse \nif 出勤时数 \u003e 公司满勤数 and ( 计时人员 = 1 or 计件人员 = 1 ) \n考试工资 = 8000 * 考试得分 / 100 \nelse \nif 计时人员 = 1 or 计件人员 = 1 and 公司满勤数 \u003e 0 \n考试工资 = 8000 * 考试得分 / 100 * 出勤时数 / 公司满勤数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E6%97%B7%E5%B7%A5%E6%89%A3%E6%AC%BE
+HTTP/1.1 200 OK
+Content-Length: 1547
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:40 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"旷工扣款","Condition":"if isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0 and isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(平时出勤工资,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select absentdays from SalarygongshiItem),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(小时工资,0) from gongshiresult ),0)  * isnull(( select absentdays from SalarygongshiItem),0)  / 8  else if isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e 0     select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  * isnull(( select absentdays from SalarygongshiItem),0)  / 8 ","DisplayCondition":"if 公司满勤数 \u003e 0 and 岗位人员 = 1 \n   旷工扣款 = 平时出勤工资 / 公司满勤数 * 旷工天数 \nelse\nif 计时人员 = 1 \n   旷工扣款 = 小时工资 * 旷工天数 / 8 \nelse\nif 计件人员 = 1 and 出勤时数 \u003e 0 \n   旷工扣款 = 计算月工资 / 出勤时数 * 旷工天数 / 8 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AD%A3%E5%BA%A6%E8%80%83%E8%AF%84%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 634
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:42 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"季度考评工资","Condition":"if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select ( isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(前两月工资合计,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ) * 0.5 * 0.08 * isnull(( select top 1 isnull(季度考评系数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ","DisplayCondition":"if 计时人员 = 1 \n   季度考评工资 = ( 计算月工资 + 前两月工资合计 ) * 0.5 * 0.08 * 季度考评系数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AD%A3%E5%BA%A6%E8%80%83%E6%A0%B8%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 624
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:42 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"季度考核工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select ( isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(前两月工资合计,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  ) * ( isnull(( select top 1 isnull(季度考核系数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  - 1 ) ","DisplayCondition":"if 岗位人员 = 1 \n   季度考核工资 = ( 计算月工资 + 前两月工资合计 ) * ( 季度考核系数 - 1 ) "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E8%80%83%E8%AF%84%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 2671
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:45 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"考评工资","Condition":"if isnull(( select top 1 isnull(DepartmentCode3,0) from employee e where e.id=EMPID),0)  = \u0027动力装备部\u0027 and isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * isnull(( select top 1 isnull(考评系数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * 0.5 * 0.08  else  if isnull(( select top 1 isnull(DepartmentCode4,0) from employee e where e.id=EMPID),0)  like \u0027品质%\u0027 and isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * ( isnull(( select top 1 isnull(考评系数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - 1 )  else  if isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  \u003e isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  and ( isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 )  select 8000 * 0.08 * isnull(( select top 1 isnull(考评系数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 and isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  \u003e 0  select 8000 * 0.08 * isnull(( select top 1 isnull(出勤时数,0) from gongshiresult ),0)  / isnull(( select top 1 isnull(公司满勤数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  * isnull(( select top 1 isnull(考评系数,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 三级部门 = \u0027动力装备部\u0027 and 计时人员 = 1 \n考评工资 = 计算月工资 * 考评系数 * 0.5 * 0.08 \nelse \nif 四级部门 like \u0027品质%\u0027 and 计时人员 = 1 \n考评工资 = 计算月工资 * ( 考评系数 - 1 ) \nelse \nif 出勤时数 \u003e 公司满勤数 and ( 计时人员 = 1 or 计件人员 = 1 ) \n考评工资 = 8000 * 0.08 * 考评系数 \nelse \nif 计时人员 = 1 or 计件人员 = 1 and 公司满勤数 \u003e 0 \n考评工资 = 8000 * 0.08 * 出勤时数 / 公司满勤数 * 考评系数 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 79
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E9%94%80%E5%94%AE%E4%BA%A7%E8%83%BD%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 476
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:45 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"销售产能工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID  and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  * ( isnull(( select top 1 isnull(销售产能系数,0) from XZ_ChgItemPay where ID=EMPID  and SelMonth=MYDATE),0)  - 1 ) ","DisplayCondition":"if 岗位人员 = 1 \n   销售产能工资 = 计算月工资 * ( 销售产能系数 - 1 ) "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%9F%BA%E6%9C%AC%E5%B7%A5%E8%B5%84
+HTTP/1.1 200 OK
+Content-Length: 1063
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:47 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"基本工资","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(计算月工资计件,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(考评工资,0) from gongshiresult ),0)   else if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1     select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考评工资,0) from gongshiresult ),0)  ","DisplayCondition":"if 岗位人员 = 1 \n   基本工资 = 计算月工资 \nelse\nif 计件人员 = 1 \n   基本工资 = 计算月工资计件 + 考评工资 \nelse\nif 计时人员 = 1 \n   基本工资 = 计算月工资 + 考评工资 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%BA%94%E5%8F%91%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 6094
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:48 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"应发合计","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(带薪年假工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考核工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(季度考核工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考试工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(销售产能工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(学历补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(职称补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(高温补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(岗位津贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(交通补贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(夜班补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(合理化提案,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(奖金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(赔偿,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(迟到扣款,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(其他扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(旷工扣款,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(年终奖,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(带薪年假工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考评工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(季度考评工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考试工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(学历补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(职称补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(高温补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(岗位津贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(交通补贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(合理化提案,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(奖金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(赔偿,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(迟到扣款,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(其他扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(旷工扣款,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(年终奖,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(计算月工资计件,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(带薪年假工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考评工资,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(考试工资,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(刀费扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(刀费补贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(学历补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(职称补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(高温补贴,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(岗位津贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(交通补贴,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(合理化提案,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(奖金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(赔偿,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(迟到扣款,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(其他扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(旷工扣款,0) from gongshiresult ),0)  + isnull(( select top 1 isnull(年终奖,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = 1 \n应发合计 = 计算月工资 + 带薪年假工资 + 考核工资 + 季度考核工资 + 考试工资 + 销售产能工资 + 学历补贴 + 职称补贴 + 高温补贴 + 岗位津贴 + 交通补贴 + 夜班补贴 + 合理化提案 + 奖金 - 赔偿 - 迟到扣款 - 其他扣款 - 旷工扣款 + 年终奖 \nelse \nif 计时人员 = 1 \n应发合计 = 计算月工资 + 带薪年假工资 + 考评工资 + 季度考评工资 + 考试工资 + 学历补贴 + 职称补贴 + 高温补贴 + 岗位津贴 + 交通补贴 + 合理化提案 + 奖金 - 赔偿 - 迟到扣款 - 其他扣款 - 旷工扣款 + 年终奖 \nelse \nif 计件人员 = 1 \n应发合计 = 计算月工资计件 + 带薪年假工资 + 考评工资 + 考试工资 - 刀费扣款 + 刀费补贴 + 学历补贴 + 职称补贴 + 高温补贴 + 岗位津贴 + 交通补贴 + 合理化提案 + 奖金 - 赔偿 - 迟到扣款 - 其他扣款 - 旷工扣款 + 年终奖 "}]
+
+------------------------------------------------------------------
+
+POST http://60.191.146.34:8391/Person/handler.ashx HTTP/1.1
+Host: 60.191.146.34:8391
+Proxy-Connection: keep-alive
+Content-Length: 61
+Accept: */*
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://60.191.146.34:8391
+Referer: http://60.191.146.34:8391/Person/XinZiSet/GongShiSet_XX.aspx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: userstyle=静谧蓝; ASP.NET_SessionId=uhxthgeutfiv4y12nylffuvi; id=system; Empname=system; loguser=%7B%20%22Uid%22%3A%22system%22%2C%20%22UName%22%3A%22system%22%20%7D
+
+State=detailFormula&csid=%E5%AE%9E%E5%8F%91%E5%90%88%E8%AE%A1
+HTTP/1.1 200 OK
+Content-Length: 3316
+Access-Control-Allow-Headers: x-requested-with,content-type
+Access-Control-Allow-Methods: OPTIONS,POST,GET
+Access-Control-Allow-Origin: *
+Cache-Control: private
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Thu, 22 Feb 2024 08:45:48 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: Microsoft-IIS/10.0
+X-Aspnet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
+[{"Name":"实发合计","Condition":"if isnull(( select top 1 isnull(岗位人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(应发合计,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(社会保险公积金,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(个人所得税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(停发工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(已领当月工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(服装扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣水电费,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣饭卡充值,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(一次性补偿金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(扣个人借款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(股权激励个税扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)   else  if isnull(( select top 1 isnull(计时人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1 or isnull(( select top 1 isnull(计件人员,0) from XZ_FixItemPay where ID=EMPID and SelMonth=MYDATE),0)  = 1  select isnull(( select top 1 isnull(应发合计,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(社会保险公积金,0) from gongshiresult ),0)  - isnull(( select top 1 isnull(个人所得税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(停发工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(已领当月工资,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(服装扣款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣水电费,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣饭卡充值,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  + isnull(( select top 1 isnull(一次性补偿金,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(扣个人借款,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  - isnull(( select top 1 isnull(代扣税,0) from XZ_ChgItemPay where ID=EMPID and SelMonth=MYDATE),0)  ","DisplayCondition":"if 岗位人员 = 1 \n实发合计 = 应发合计 - 社会保险公积金 - 个人所得税 - 停发工资 - 已领当月工资 - 服装扣款 - 代扣水电费 - 代扣饭卡充值 + 一次性补偿金 - 扣个人借款 - 代扣税 - 股权激励个税扣款 \nelse \nif 计时人员 = 1 or 计件人员 = 1 \n实发合计 = 应发合计 - 社会保险公积金 - 个人所得税 - 停发工资 - 已领当月工资 - 服装扣款 - 代扣水电费 - 代扣饭卡充值 + 一次性补偿金 - 扣个人借款 - 代扣税 "}]
+
+------------------------------------------------------------------
+
