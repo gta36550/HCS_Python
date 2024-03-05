@@ -1,9 +1,15 @@
 import json
 import re
-import codecs
+import chardet
 import pandas as pd
 from tkinter import filedialog
 from tkinter import Tk
+
+# 探测文件编码
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as f:
+        raw_data = f.read()
+    return chardet.detect(raw_data)['encoding']
 
 # 定义一个函数，用于从TXT文件中提取DisplayCondition信息
 def get_display_conditions(txt_file_path):
